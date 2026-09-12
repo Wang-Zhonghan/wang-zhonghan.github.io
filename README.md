@@ -8,7 +8,9 @@ Undergraduate Student in Computer Science
 **Homepage:** <https://wang-zhonghan.github.io> &nbsp;·&nbsp;
 **Email:** 24371067 [at] buaa.edu.cn &nbsp;·&nbsp;
 **GitHub:** [@Siriusuna](https://github.com/Siriusuna) &nbsp;·&nbsp;
-**OpenReview:** [~Zhonghan_Wang2](https://openreview.net/profile?id=~Zhonghan_Wang2)
+**OpenReview:** [~Zhonghan_Wang2](https://openreview.net/profile?id=~Zhonghan_Wang2) &nbsp;·&nbsp;
+**ORCID:** [0009-0009-1451-5412](https://orcid.org/0009-0009-1451-5412) &nbsp;·&nbsp;
+**LinkedIn:** [zhonghan-wang](https://www.linkedin.com/in/zhonghan-wang-9353ab436/)
 
 ## About
 
