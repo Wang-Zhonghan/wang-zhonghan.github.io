@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ==== 基本信息 ==== -->
+<title>Zhonghan Wang</title>
+<meta name="description" content="Homepage of Zhonghan Wang, an undergraduate student at Beihang University working on vision-language models for medicine.">
+<meta name="author" content="Zhonghan Wang">
+<link rel="canonical" href="https://wang-zhonghan.github.io/">
+
+<!-- 社交分享卡片 -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Zhonghan Wang">
+<meta property="og:description" content="Undergraduate student at Beihang University working on vision-language models for medicine.">
+<meta property="og:url" content="https://wang-zhonghan.github.io/">
+<meta property="og:image" content="https://wang-zhonghan.github.io/assets/img/avatar.jpg">
+
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/main.css">
+<script>
+  // 防止深色模式闪白，必须放在 CSS 之后、body 之前
+  (function () {
+    try {
+      var t = localStorage.getItem('theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  })();
+</script>
+</head>
+
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<nav class="topnav" aria-label="Section navigation">
+  <div class="topnav__inner">
+    <a class="topnav__brand" href="#top">Zhonghan Wang</a>
+    <ul class="topnav__links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+    </ul>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle color theme" title="Toggle light / dark theme">
+      <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.6M12 18.8v2.6M4.2 12H1.6M22.4 12h-2.6M6.4 6.4 4.6 4.6M19.4 19.4l-1.8-1.8M17.6 6.4l1.8-1.8M4.6 19.4l1.8-1.8"/></svg>
+      <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.6A8.6 8.6 0 0 1 9.4 3.5a8.6 8.6 0 1 0 11.1 11.1z"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="wrap" id="top">
+
+  <!-- ============================================================
+       HEADER
+       ============================================================ -->
+  <header class="masthead">
+    <div class="masthead__text">
+      <h1 class="name">Zhonghan Wang <span class="name-alt" lang="zh-Hans">王忠函</span></h1>
+      <p class="role">Undergraduate Student in Computer Science</p>
+      <p class="affil">
+        Birth Lab, School of Biomedical Engineering, Tsinghua University<br>
+        School of Computer Science and Engineering, Beihang University
+      </p>
+
+      <ul class="linklist">
+        <li><a href="mailto:24371067&#64;buaa.edu.cn">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3 6 9 6.5L21 6"/></svg>Email</a></li>
+        <li><a href="https://github.com/Siriusuna" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.3 20.4c-4.4 1.3-4.4-2.3-6.2-2.7m12.4 5.1v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.4-1.4 5.4-6a4.7 4.7 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.3s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.9 4.5 5.8 4.8 5.8 4.8a4.3 4.3 0 0 0-.1 3.3 4.7 4.7 0 0 0-1.3 3.3c0 4.5 2.6 5.6 5.4 5.9-.5.6-.5 1.1-.5 2v3.5"/></svg>GitHub</a></li>
+        <li><a href="https://openreview.net/profile?id=~Zhonghan_Wang2" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.4"/></svg>OpenReview</a></li>
+      </ul>
+    </div>
+
+    <figure class="masthead__photo">
+      <img src="assets/img/avatar.jpg" alt="Portrait of Zhonghan Wang" width="180" height="180">
+    </figure>
+  </header>
+
+  <main id="main">
+
+    <!-- ============================================================
+         ABOUT
+         ============================================================ -->
+    <section id="about" class="section">
+      <h2>About</h2>
+      <p>
+        I am an undergraduate student at the
+        <a href="https://scse.buaa.edu.cn/">School of Computer Science and Engineering</a>,
+        <a href="https://www.buaa.edu.cn/">Beihang University</a>.
+        I am currently a research assistant at the <a href="https://birthlab.github.io/">Birth Lab</a>,
+        <a href="https://bme.tsinghua.edu.cn/">School of Biomedical Engineering</a>,
+        <a href="https://www.tsinghua.edu.cn/">Tsinghua University</a>,
+        advised by <a href="https://bme.tsinghua.edu.cn/info/1118/1490.htm">Prof. Qiyuan Tian</a>.
+      </p>
+      <p>
+        My research centers on <strong>vision-language models (VLMs) for medicine</strong>. I am broadly interested in
+        how multimodal models can be made reliable, data-efficient, and clinically
+        trustworthy enough to be deployed in real healthcare workflows.
+      </p>
+      <p class="note">
+        I am happy to chat about research, collaboration or internship opportunities &mdash; feel free to reach out by
+        <a href="mailto:24371067&#64;buaa.edu.cn">email</a>.
+      </p>
+    </section>
+
+    <!-- ============================================================
+         EDUCATION
+         ============================================================ -->
+    <section id="education" class="section">
+      <h2>Education</h2>
+      <ul class="timeline">
+        <li>
+          <div class="timeline__when">Sep. 2024 &ndash; Present</div>
+          <div class="timeline__what">
+            <strong>B.Eng. in Computer Science</strong>, School of Computer Science and Engineering, Beihang University, Beijing, China
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============================================================
+         EXPERIENCE
+         ============================================================ -->
+    <section id="experience" class="section">
+      <h2>Experience</h2>
+      <ul class="timeline">
+        <li>
+          <div class="timeline__when">Jul. 2026 &ndash; Present</div>
+          <div class="timeline__what">
+            <strong>Research Assistant</strong>, <a href="https://birthlab.github.io/">Birth Lab</a>, School of Biomedical Engineering, Tsinghua University<br>
+            <span class="muted">Advised by <a href="https://bme.tsinghua.edu.cn/info/1118/1490.htm">Prof. Qiyuan Tian</a> &middot; Medical vision-language models</span>
+          </div>
+        </li>
+        <li>
+          <div class="timeline__when">Nov. 2025 &ndash; Jan. 2026</div>
+          <div class="timeline__what">
+            <strong>Algorithm Engineer Intern</strong>, <a href="http://www.microinspect.com.cn/">uInspect</a>
+            <br>
+            <span class="muted">Developed supervised and unsupervised anomaly detection algorithms for semiconductor wafer defect inspection.</span>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>
+      &copy; <span id="year">2026</span> Zhonghan Wang.
+      Last updated: September 2026.
+    </p>
+  </footer>
+
+</div><!-- /.wrap -->
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
