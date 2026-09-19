@@ -3,6 +3,54 @@
    单栏居中布局，浅/深色双主题。改配色只需要动下面的 :root 变量。
    ========================================================================== */
 
+/* --- 0. Webfonts --------------------------------------------------------- */
+/* 均为自托管子集，不依赖任何 CDN（Google Fonts 在中国大陆不可达）。
+
+   这些文件是 OFL 1.1 定义下的 Modified Version（改了格式、删了字形），
+   因此一律改用中性字体名。原始版权声明保留在各文件的 name 表里，
+   完整许可证见同目录 OFL-*.txt。
+
+   size-adjust 统一用 105%：Site Serif / Site Sans 源出同一超家族，
+   x-height 分别是 .456 / .461，用同一个系数才能保住两者的视觉配比
+   （若各自去贴合系统回退字体，衬线与无衬线反而会大小不一）。 */
+
+@font-face {
+  font-family: "Site Serif";          /* 源自 Alegreya (OFL) */
+  src: url("../fonts/serif-latin.woff2") format("woff2");
+  font-weight: 400 900;               /* 可变字体，一个文件覆盖全字重 */
+  font-style: normal;
+  font-display: swap;                 /* 字体到达前先用回退字体渲染，不白屏 */
+  size-adjust: 105%;
+}
+
+@font-face {
+  font-family: "Site Sans";           /* 源自 Alegreya Sans (OFL)，含小型大写 */
+  src: url("../fonts/sans-latin.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  size-adjust: 105%;
+}
+
+@font-face {
+  font-family: "Site Mono";           /* 源自 IBM Plex Mono (OFL) */
+  src: url("../fonts/mono-latin.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  /* 仅 .bib 使用，而 .bib 默认 display:none，
+     浏览器要等 BibTeX 展开时才会真正下载这个文件。 */
+}
+
+@font-face {
+  font-family: "Name ZH";             /* 源自 GenRyuMin2 TC (OFL) */
+  src: url("../fonts/name-zh.woff2") format("woff2");
+  font-weight: 400 700;               /* 实为 Bold 一档，声明范围以免浏览器再合成粗体 */
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+738B, U+5FE0, U+51FD;   /* 王 忠 函 —— 仅这三字触发下载 */
+}
+
 /* --- 1. Design tokens ---------------------------------------------------- */
 
 :root {
@@ -21,14 +69,16 @@
   --award:         #9a6207;
   --award-bg:      #fdf4e3;
 
-  /* 系统字体栈：不依赖 Google Fonts，国内外加载都快、跨平台观感一致。
-     想换成衬线（更“论文感”）就把 --font-body 换成：
-     "Charter", "Source Serif 4", Georgia, "Songti SC", serif; */
-  --font-body: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
-               "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB",
-               "Microsoft YaHei", sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
-               "Liberation Mono", monospace;
+  /* 正文衬线。size-adjust 已做过视觉补偿，字号规则不必另行调整。 */
+  --font-body: "Site Serif", "Name ZH", Georgia, "Liberation Serif",
+               "Times New Roman", "Songti SC", "SimSun", serif;
+  /* 界面元素（导航、标签、日期、按钮）用无衬线：
+     小字号下更清晰，也让「内容 / 控件」在视觉上分层。 */
+  --font-ui:   "Site Sans", "Name ZH", ui-sans-serif, system-ui,
+               -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+               "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --font-mono: "Site Mono", ui-monospace, SFMono-Regular, "SF Mono",
+               Menlo, Consolas, "Liberation Mono", monospace;
 
   --maxw: 56rem;          /* ≈ 896px，学术主页常见宽度 */
   --radius: 6px;
@@ -145,6 +195,7 @@ img { max-width: 100%; height: auto; }
 }
 
 .topnav__inner {
+  font-family: var(--font-ui);
   max-width: var(--maxw);
   margin: 0 auto;
   padding: .55rem 1.5rem;
@@ -207,9 +258,14 @@ html[data-theme="dark"] .icon-moon { display: inline; }
 .section > h2 {
   margin: 0 0 1.1rem;
   padding-bottom: .4rem;
-  font-size: 1.15rem;
-  letter-spacing: .06em;
-  text-transform: uppercase;
+  font-family: var(--font-ui);
+  font-size: 1.32rem;
+  font-weight: 600;
+  /* 真·小型大写：由 Site Sans 的 smcp 特性提供，
+     比 text-transform: uppercase 把小写字母拉高变形要正得多，
+     笔画粗细也和周围文字匹配 —— 期刊标题常用的做法。 */
+  font-variant-caps: small-caps;
+  letter-spacing: .04em;
   color: var(--fg);
   border-bottom: 1px solid var(--border);
 }
@@ -269,6 +325,7 @@ html[data-theme="dark"] .icon-moon { display: inline; }
 .affil a:hover { color: var(--accent); }
 
 .linklist {
+  font-family: var(--font-ui);
   display: flex;
   flex-wrap: wrap;
   gap: .45rem .5rem;
@@ -323,7 +380,8 @@ html[data-theme="dark"] .icon-moon { display: inline; }
   flex: none;
   width: 6.2rem;
   color: var(--fg-faint);
-  font-variant-numeric: tabular-nums;
+  font-family: var(--font-ui);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: .9rem;
   padding-top: .08rem;
 }
@@ -389,6 +447,7 @@ html[data-theme="dark"] .icon-moon { display: inline; }
 }
 
 .badge {
+  font-family: var(--font-ui);
   display: inline-block;
   padding: .1rem .5rem;
   font-size: .8rem;
@@ -420,6 +479,7 @@ html[data-theme="dark"] .icon-moon { display: inline; }
 }
 
 .pub__links {
+  font-family: var(--font-ui);
   display: flex;
   flex-wrap: wrap;
   gap: .4rem;
@@ -469,8 +529,11 @@ html[data-theme="dark"] .icon-moon { display: inline; }
   flex: none;
   width: 8.5rem;
   color: var(--fg-faint);
+  font-family: var(--font-ui);
   font-size: .9rem;
-  font-variant-numeric: tabular-nums;
+  /* lining-nums：Alegreya 默认是 old-style 数字（3/4/7/9 带降部），
+     用在日期列会高低参差、破坏对齐，这里切回等高数字。 */
+  font-variant-numeric: tabular-nums lining-nums;
   padding-top: .12rem;
 }
 .timeline__what { flex: 1 1 auto; font-size: .96rem; }
@@ -478,6 +541,7 @@ html[data-theme="dark"] .icon-moon { display: inline; }
 /* --- 9. Footer ----------------------------------------------------------- */
 
 .footer {
+  font-family: var(--font-ui);
   margin-top: 3.5rem;
   padding-top: 1.2rem;
   border-top: 1px solid var(--border);

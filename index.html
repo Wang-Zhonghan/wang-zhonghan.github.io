@@ -18,6 +18,11 @@
 <meta property="og:image" content="https://wang-zhonghan.github.io/assets/img/avatar.jpg">
 
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<!-- 预加载首屏必用的两个字体子集：让浏览器与 CSS 并行下载，缩短字体替换的闪动。
+     等宽子集与中文子集不预加载 —— 前者只在展开 BibTeX 时才用到，
+     后者由 unicode-range 按需触发。 -->
+<link rel="preload" href="assets/fonts/serif-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/sans-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/main.css">
 <script>
   // 防止深色模式闪白，必须放在 CSS 之后、body 之前
@@ -71,7 +76,7 @@
           <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.4"/></svg>OpenReview</a></li>
         <li><a href="https://orcid.org/0009-0009-1451-5412" target="_blank" rel="noopener">
           <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8.4v7.2M9 8.4h3a3.6 3.6 0 0 1 0 7.2H9zM9 5.6h.01"/></svg>ORCID</a></li>
-        <li><a href="https://www.linkedin.com/in/zhonghan-wang/" target="_blank" rel="noopener">
+        <li><a href="https://www.linkedin.com/in/zhonghan-wang" target="_blank" rel="noopener">
           <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7.6 10.6v6M7.6 7.7h.01M11.9 16.6v-6M11.9 13.4a2.6 2.6 0 0 1 5.2 0v3.2"/></svg>LinkedIn</a></li>
       </ul>
     </div>
